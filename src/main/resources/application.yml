@@ -13,3 +13,7 @@ spring:
     show-sql: 'true'
   application:
     name: Ketano
+  security:
+    user:
+      name: user
+      password: 1234
