@@ -1,4 +1,4 @@
-package com.arcade.ketano.model;
+package com.arcade.ketano.model.entities;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,19 +22,40 @@ import java.util.UUID;
 @SuperBuilder
 @MappedSuperclass
 public class BaseEntity {
+
+    /**
+     * Primary key of the entity.
+     * Using UUID ensures globally unique identifiers.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    // WHEN IT WAS CREATED OR MODIFIED
+    /**
+     * Timestamp when the entity was created.
+     * Automatically populated by Spring Data JPA when @EnableJpaAuditing is active.
+     */
     @CreatedDate
     private LocalDateTime createdAt;
+
+    /**
+     * Timestamp when the entity was last modified.
+     * Automatically updated by Spring Data JPA.
+     */
     @LastModifiedDate
     private LocalDateTime lastModifiedAt;
 
-    // Who did it
+    /**
+     * Username of the user who created the entity.
+     * Populated automatically by AuditorAware implementation.
+     */
     @CreatedBy
     public String createdBy;
+
+    /**
+     * Username of the user who last modified the entity.
+     * Populated automatically by AuditorAware implementation.
+     */
     @LastModifiedBy
     public String lastModifiedBy;
 
