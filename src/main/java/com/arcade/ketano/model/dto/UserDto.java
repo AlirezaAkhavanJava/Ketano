@@ -12,14 +12,14 @@ public record UserDto(
         @NonNull
         @NotBlank(message = "Blank filed is not allowed")
         @NotEmpty(message = "This field can not be empty")
-        @Size(max = 100)
+        @Size(max = 100 , message = "Password must be between 8 and 50 characters")
         String name,
 
         @NonNull
         @NotBlank(message = "Blank filed is not allowed")
         @NotEmpty(message = "This field can not be empty")
         @Email
-        @Size(min = 12, max = 300)
+        @Size(min = 12, max = 300 , message = "email must be at least 12 characters")
         String email,
 
         @NonNull

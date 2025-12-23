@@ -1,6 +1,7 @@
 package com.arcade.ketano.service;
 
 import com.arcade.ketano.error.exceptions.EmailAlreadyExistsException;
+import com.arcade.ketano.error.exceptions.PasswordNotValidException;
 import com.arcade.ketano.error.exceptions.UsernameAlreadyExistsException;
 import com.arcade.ketano.model.dto.LoginRegisterResponse;
 import com.arcade.ketano.model.dto.UserDto;
@@ -29,6 +30,7 @@ public class UserLoginRegisterServiceImpl
         if (userLoggingRepository.existsUserByEmail(userDto.email())) {
             throw new EmailAlreadyExistsException("Email '" + userDto.email() + "' is already registered.");
         }
+
         User user = userMapper.toUser(userDto);
         User saved = userLoggingRepository.save(user);
         return userMapper.toLoginResponse(saved);

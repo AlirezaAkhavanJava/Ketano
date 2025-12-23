@@ -1,8 +1,8 @@
 package com.arcade.ketano.error.handlers;
 
+import com.arcade.ketano.error.dependencies.UserExistMessage;
 import com.arcade.ketano.error.exceptions.EmailAlreadyExistsException;
 import com.arcade.ketano.error.exceptions.UserExistException;
-import com.arcade.ketano.error.dependencies.UserExistMessage;
 import com.arcade.ketano.error.exceptions.UsernameAlreadyExistsException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
