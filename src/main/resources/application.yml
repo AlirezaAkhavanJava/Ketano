@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    username: ethan
+    url: jdbc:postgresql://localhost:5432/Ketano
+    password: '9908'
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: 'true'
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+  application:
+    name: Ketano
