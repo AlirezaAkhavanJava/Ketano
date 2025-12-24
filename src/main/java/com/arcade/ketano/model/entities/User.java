@@ -1,10 +1,7 @@
 package com.arcade.ketano.model.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EntityListeners;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -43,4 +40,7 @@ public class User extends BaseEntity {
     @Size(min = 8, max = 50)
     @NotBlank
     private String password;
+
+    @OneToOne(fetch = FetchType.LAZY)
+    private UserDashBoard dashboard;
 }
