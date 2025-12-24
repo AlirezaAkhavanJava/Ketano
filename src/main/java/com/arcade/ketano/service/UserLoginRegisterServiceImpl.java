@@ -1,7 +1,6 @@
 package com.arcade.ketano.service;
 
 import com.arcade.ketano.error.exceptions.EmailAlreadyExistsException;
-import com.arcade.ketano.error.exceptions.PasswordNotValidException;
 import com.arcade.ketano.error.exceptions.UsernameAlreadyExistsException;
 import com.arcade.ketano.model.dto.LoginRegisterResponse;
 import com.arcade.ketano.model.dto.UserDto;

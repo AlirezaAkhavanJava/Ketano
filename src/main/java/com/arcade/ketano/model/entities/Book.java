@@ -23,22 +23,31 @@ import java.time.LocalDate;
 @SuperBuilder
 public class Book extends BaseEntity {
     @Column(nullable = false)
+    private String title;
+
+    @Column(nullable = false)
     private BookCategory category;
+
     @Column(nullable = false)
     private Integer pages_amount;
+
     @Column(nullable = false)
     private Double price;
-    @Column(nullable = false)
-    private String title;
+
     @Column(nullable = false)
     private String type;
+
     @Column(nullable = false)
     private Double volume;
+
     @Column(nullable = false)
     private String language;
+
     @Column(nullable = false)
     private LocalDate publishDate;
+
     private Double price_dollar;
+
     @Max(5)
     @Min(1)
     @Length(max = 1)
@@ -47,6 +56,7 @@ public class Book extends BaseEntity {
 
     @Column(nullable = false)
     private boolean has_discount;
+
     private double discount_amount;
 
     @ManyToOne

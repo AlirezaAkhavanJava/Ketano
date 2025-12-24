@@ -16,7 +16,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class UserDashBoard extends User {
+public class UserDashBoard extends BaseEntity {
 
     private String fullName;
     private int age;
