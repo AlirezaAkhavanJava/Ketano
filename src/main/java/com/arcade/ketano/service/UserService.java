@@ -6,4 +6,6 @@ import java.util.Optional;
 
 public interface UserService {
     Optional<UserSearchResponseDto> findByName(String name);
+
+    Optional<UserSearchResponseDto> findByEmail(String email);
 }
