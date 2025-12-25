@@ -1,5 +1,3 @@
-Got it. Let’s make a **professional, non-technical `README.md`** that explains **what the application is, what it does, and its purpose**, without exposing any implementation details.
-
 # Ketano Online Bookstore
 
 **Ketano** is an online bookstore platform that allows users to **discover, explore, and purchase books** in a simple and enjoyable way. This application is designed to replicate the experience of a modern digital bookstore, providing a seamless and interactive environment for readers and book enthusiasts.
