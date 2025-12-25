@@ -1,9 +1,7 @@
 package com.arcade.ketano.model.entities;
 
 import com.arcade.ketano.model.enums.BookCategory;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
@@ -11,7 +9,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
-import org.hibernate.validator.constraints.Length;
 
 import java.time.LocalDate;
 
@@ -50,8 +47,6 @@ public class Book extends BaseEntity {
 
     @Max(5)
     @Min(1)
-    @Length(max = 1)
-    @Column()
     private byte rating;
 
     @Column(nullable = false)
@@ -59,7 +54,8 @@ public class Book extends BaseEntity {
 
     private double discount_amount;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "dashboard_id", nullable = true)
     private UserDashBoard user_dashboard;
 
     @ManyToOne

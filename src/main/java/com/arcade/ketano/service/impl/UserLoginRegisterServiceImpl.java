@@ -1,4 +1,4 @@
-package com.arcade.ketano.service;
+package com.arcade.ketano.service.impl;
 
 import com.arcade.ketano.error.exceptions.EmailAlreadyExistsException;
 import com.arcade.ketano.error.exceptions.UsernameAlreadyExistsException;
@@ -7,6 +7,7 @@ import com.arcade.ketano.model.dto.UserDto;
 import com.arcade.ketano.model.entities.User;
 import com.arcade.ketano.model.mappers.UserMapper;
 import com.arcade.ketano.repository.UserLoginRegisterRepository;
+import com.arcade.ketano.service.UserLoginRegisterService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
