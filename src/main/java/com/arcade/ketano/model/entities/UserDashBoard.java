@@ -1,26 +1,29 @@
 package com.arcade.ketano.model.entities;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
-@EqualsAndHashCode(callSuper = true)
+
 @Data
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @SuperBuilder
-public class UserDashBoard extends BaseEntity {
+public class UserDashBoard  {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
     private String fullName;
     private int age;
 
-    @OneToMany(mappedBy = "user_dashboard",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true,
-            fetch = FetchType.LAZY)
-    private List<Book> books = new ArrayList<>();
+    @OneToMany
+    private List<Book> books;
 }
