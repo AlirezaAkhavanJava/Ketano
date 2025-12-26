@@ -54,8 +54,9 @@ public class Book extends BaseEntity {
 
     private double discount_amount;
 
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "dashboard_id", nullable = true)
+    @JoinColumn(name = "dashboard_id")
     private UserDashBoard user_dashboard;
 
     @ManyToOne
